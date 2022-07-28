@@ -47,7 +47,11 @@ export class ThemeSwitchComponent implements OnInit {
   `;
 
   ngOnInit() {
-    this.darkMode = localStorage.getItem('mode') !== 'light' ? true : false;
+
+    if (localStorage.getItem('mode') !== 'light') {
+      this.rootElem.style.cssText = this.darkColors;
+      this.darkMode = true
+    }
   }
 
   toggleMode() {
