@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular.io-15-version'`, () => {
+  it(`should have as title 'design-volume'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular.io-15-version');
+    expect(app.title).toEqual('design-volume');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular.io-15-version app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('design-volume app is running!');
   });
 });
