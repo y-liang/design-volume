@@ -11,11 +11,11 @@ export class ThemeSwitchComponent implements OnInit {
 
 
   modes: string[] = ['dark', 'light'];
-  mode: string;
+  mode: string | undefined;
 
-  darkMode: boolean;
+  darkMode: boolean | undefined;
 
-  rootElem: HTMLElement = document.querySelector('body');
+  rootElem: HTMLElement | null = document.querySelector('body');
   darkColors: string = `
   
   --color-bg-primary: var(--color-darker);
@@ -48,27 +48,28 @@ export class ThemeSwitchComponent implements OnInit {
 
   ngOnInit() {
 
-    if (localStorage.getItem('mode') !== 'light') {
+    if (localStorage.getItem('mode') !== 'light' && this.rootElem) {
       this.rootElem.style.cssText = this.darkColors;
-      this.darkMode = true
+      this.darkMode = true;
     }
   }
 
   toggleMode() {
 
+    if (this.rootElem) {
+      if (this.darkMode) {
+        this.darkMode = false;
+        localStorage.setItem('mode', 'light');
 
-    if (this.darkMode) {
-      this.darkMode = false;
-      localStorage.setItem('mode', 'light');
+        this.rootElem.style.cssText = this.lightColors;
+      } else {
+        this.darkMode = true;
+        localStorage.setItem('mode', 'dark');
 
-      this.rootElem.style.cssText = this.lightColors;
-    } else {
-      this.darkMode = true;
-      localStorage.setItem('mode', 'dark');
+        this.rootElem.style.cssText = this.darkColors;
+      }
 
-      this.rootElem.style.cssText = this.darkColors;
     }
-
   }
 
 }

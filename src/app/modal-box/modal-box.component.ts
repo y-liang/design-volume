@@ -1,6 +1,6 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PROJECTSARCH, IMAGESARCH, PAGESARCH } from '../projects';
+import { PROJECTSARCH, IMAGESARCH, PAGESARCH } from '../lib/projects';
 
 
 @Component({
@@ -16,11 +16,10 @@ export class ModalBoxComponent implements OnInit {
   // @Input() setIndex;
 
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { index: number; }) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { index: number; type: string; }) { }
 
   ngOnInit(): void {
-    // console.log("this.projIndex");
-    // console.log(this.setIndex);
+
   }
 
 }

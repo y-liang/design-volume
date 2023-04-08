@@ -1,9 +1,16 @@
-<div id="modal-box">
-    <mat-dialog-content>
+<div id="modal-box" [ngSwitch]="data.type">
+    <div *ngSwitchDefault mat-dialog-actions>
         <img src={{imagesArch[data.index].pageA}} alt="">
         <img src={{imagesArch[data.index].pageB}} alt="">
         <img src={{imagesArch[data.index].pageC}} alt="">
         <div *ngIf="imagesArch[data.index].pageD"> <img src={{imagesArch[data.index].pageD}} alt=""></div>
         <div *ngIf="imagesArch[data.index].pageE"> <img src={{imagesArch[data.index].pageE}} alt=""></div>
-    </mat-dialog-content>
+    </div>
+    <div *ngSwitchCase="'two'" mat-dialog-actions>
+        <img src={{projectsArch[data.index].pageA}} alt="">
+        <img src={{projectsArch[data.index].pageB}} alt="">
+        <img src={{projectsArch[data.index].pageC}} alt="">
+        <div *ngIf="projectsArch[data.index].pageD"> <img src={{projectsArch[data.index].pageD}} alt=""></div>
+        <div *ngIf="projectsArch[data.index].pageE"> <img src={{projectsArch[data.index].pageE}} alt=""></div>
+    </div>
 </div>

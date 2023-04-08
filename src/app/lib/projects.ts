@@ -391,11 +391,11 @@ export const PAGESARCH: PageArch[] = [
       projId: 101,
       image: '../assets/architecture/2017/0906.png',
    },
-   {
-      imgId: 200,
-      projId: 101,
-      image: '../assets/architecture/2017/0907.png',
-   },
+   // {
+   //    imgId: 200,
+   //    projId: 101,
+   //    image: '../assets/architecture/2017/0907.png',
+   // },
 
    {
       imgId: 200,

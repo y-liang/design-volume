@@ -38,7 +38,7 @@
   cursor: pointer;
   display: inline-block;
   // float: right;
-  padding: 28px 15px;
+  padding: 28px 6px;
   position: relative;
   user-select: none;
 }
@@ -77,32 +77,32 @@
   display: none;
 }
 
-#menu-bar .menu-btn:checked ~ .menu {
+#menu-bar .menu-btn:checked~.menu {
   max-height: 240px;
 }
 
-#menu-bar .menu-btn:checked ~ .menu-icon .nav-icon {
+#menu-bar .menu-btn:checked~.menu-icon .nav-icon {
   background: transparent;
 }
 
-#menu-bar .menu-btn:checked ~ .menu-icon .nav-icon:before {
+#menu-bar .menu-btn:checked~.menu-icon .nav-icon:before {
   transform: rotate(-45deg);
 }
 
-#menu-bar .menu-btn:checked ~ .menu-icon .nav-icon:after {
+#menu-bar .menu-btn:checked~.menu-icon .nav-icon:after {
   transform: rotate(45deg);
 }
 
-#menu-bar .menu-btn:checked ~ .menu-icon:not(.steps) .nav-icon:before,
-#menu-bar .menu-btn:checked ~ .menu-icon:not(.steps) .nav-icon:after {
+#menu-bar .menu-btn:checked~.menu-icon:not(.steps) .nav-icon:before,
+#menu-bar .menu-btn:checked~.menu-icon:not(.steps) .nav-icon:after {
   top: 0;
 }
 
 #menu-bar {
   position: absolute;
   top: 0;
-  right: 0;
-  margin-right: 15px;
+  // right: 0;
+  // margin-right: 15px;
   margin-top: 1px;
 }
 
@@ -121,10 +121,12 @@
   #menu-bar li {
     float: left;
   }
+
   #menu-bar li a {
 
     font-size: 21px;
   }
+
   #menu-bar .menu {
     clear: none;
     float: right;
@@ -132,6 +134,7 @@
     background-color: transparent;
     margin-top: 12px;
   }
+
   #menu-bar .menu-icon {
     display: none;
   }

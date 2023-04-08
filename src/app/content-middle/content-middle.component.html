@@ -14,7 +14,7 @@
                 <div *ngSwitchDefault class="collage-wrapper">
                     <!-- 01 - 25 -->
                     <div *ngFor="let img of imagesArch; index as i;" class="card card-one">
-                        <div class="project" (click)="openDialog(i)">
+                        <div class="project" (click)="openDialog(i, selection.value)">
                             <img src={{img.image}} alt="">
                             <div class="middle">
                                 <div class="title">{{img.name}}</div>
@@ -24,8 +24,8 @@
                 </div>
                 <div *ngSwitchCase="'two'" class="deck-wrapper">
                     <!-- 100 - 106 -->
-                    <div *ngFor="let proj of projectsArch.slice().reverse(); index as i;" class="card card-two">
-                        <div class="project" (click)="openDialog(i)">
+                    <div *ngFor="let proj of projectsArch; index as i;" class="card card-two">
+                        <div class="project" (click)="openDialog(i, selection.value)">
                             <img src={{proj.image}} alt={{proj.name}}>
                             <div class="project-name">{{proj.name}}</div>
                             <div class="project-description">{{proj.description}}</div>
@@ -44,18 +44,15 @@
         </div>
         <div id="work">
         </div>
-        <div id="about">
+        <!-- <div id="about">
             <div id="about-container">
                 <app-wave-divider wdType='b'></app-wave-divider>
                 <div class="bio-wrapper">
                     <div class="bio-description">
                         <div class="top-row"> Hello there, </div>
                         <div class="bio-pic">
-                            <p> I’m Yan, born and raised on the tropical island of Hainan in China. By way of Shanghai,
-                                I now live in sunny Santa Monica. <br> <br> Over the years I have been expanding my
-                                interest in design and technology from one medium to another - from the physical world
-                                of architectural design to the digital world of web development. </p>
-                            <img src="../../assets/programming/6MNL9.jpg" alt="">
+                            <p> I’m Yan, born and raised on the tropical island of Hainan in China. By way of Shanghai, I now live in sunny Santa Monica. <br> <br> Over the years I have been expanding my interest in design and technology from one medium to another - from the physical world of architectural design to the digital world of web development. </p>
+                            <img src="../../assets/beach.jpg" alt="">
                         </div>
                         <div class="bottom-row">Also, I built a little app called <a
                                 href='https://wagtrail.dev.yliang.net'>wagtrail</a> for
@@ -64,12 +61,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
-        <div id="play">
+        </div> -->
+        <!-- <div id="play">
             <div id="play-container">
                 <app-wave-divider wdType='c'></app-wave-divider>
                 <div class="game-wrapper">
@@ -77,12 +70,12 @@
                     <app-mix-match></app-mix-match>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div id="contact">
             <div id="contact-container">
                 <app-wave-divider wdType='d'></app-wave-divider>
                 <div class="note-wrapper">
-                    <a href="mailto:yan@yliang.net">drop a line and say hi</a><br>
+                    <a href="mailto:yan@yliang.net">drop a line</a><br>
                 </div>
                 <p class="footnote">Made by Yan Liang in Santa Monica, CA</p>
             </div>

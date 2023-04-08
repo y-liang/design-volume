@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalBoxComponent } from '../modal-box/modal-box.component';
-import { PROJECTSARCH, IMAGESARCH, PAGESARCH } from '../projects';
+import { PROJECTSARCH, IMAGESARCH, PAGESARCH } from '../lib/projects';
 
 
 
@@ -17,7 +17,7 @@ export class ContentMiddleComponent implements OnInit {
   imagesArch = IMAGESARCH;
   pagesArch = PAGESARCH;
 
-  theIndex: number;
+  theIndex: number | undefined;
 
 
   constructor(public dialog: MatDialog) { }
@@ -26,17 +26,20 @@ export class ContentMiddleComponent implements OnInit {
 
   }
 
-  getIndex(i) {
+  getIndex(i: number | undefined) {
 
 
     this.theIndex = i;
 
   }
 
-  openDialog(i) {
-
+  openDialog(i: number | undefined, type: string | undefined) {
     const dialogRef = this.dialog.open(ModalBoxComponent, {
-      data: { index: i },
+      data: { index: i, type: type },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log(`${result}`);
     });
 
   }

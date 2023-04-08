@@ -1,11 +1,18 @@
 @import '../../styles.less';
 
 
+#theme-switch {
+   max-width: @page-max-width;
+   position: relative;
+   float: right;
+}
+
+
 #toggle {
    position: absolute;
-   top: 48px;
+   top: -12px;
    right: 48px;
-   transform: scale(0.75);
+   transform: scale(0.6);
 }
 
 .knobs,
@@ -95,9 +102,9 @@
 
 @media @mobile {
    #toggle {
-      transform: scale(0.75);
+      transform: scale(0.5);
       position: absolute;
-      top: 0;
+      top: -30px;
       right: 0;
       margin: 12px;
    }
