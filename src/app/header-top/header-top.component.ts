@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderTopComponent implements OnInit {
 
+  squares: string[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
 
 
 
