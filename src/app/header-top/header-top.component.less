@@ -1,10 +1,11 @@
 @import "../../styles.less";
 
 #header-top.bg-gradient {
-  margin: auto;
+  margin: -3px auto;
+  // background: @color-bg-primary;
 }
 
-#header-top {
+#header-top>div:not(:last-child) {
   max-width: @page-max-width;
 }
 
@@ -24,7 +25,8 @@
   font-family: @font-headline;
   color: @color-ln-primary;
   padding: 9px;
-  margin: 15px;
+  margin-left: 90px;
+  margin-top: 15px;
 
   &:hover {
     u {
@@ -41,6 +43,8 @@
   #header-top #logo {
     font-size: 18px;
     padding: 3px;
+    margin-left: 30px;
+
   }
 }
 
@@ -134,18 +138,18 @@
 
 
 /* highlight */
-@highlight-vw: 210px;
+@highlight-vw: 300px;
 
 
 #highlight-container {
   margin: 0 auto 60px;
-  padding: 90px 15vw;
+  padding: 90px;
   // max-width: 900px;
-  text-align: left;
+  text-align: center;
   overflow: hidden;
 
   h1 {
-    font-size: 30px;
+    font-size: 48px;
     font-family: @font-headline;
     color: @color-ft-primary;
 
@@ -153,7 +157,7 @@
   }
 
   h3 {
-    font-size: 21px;
+    font-size: 33px;
     font-weight: 300;
     line-height: 1.2;
 
@@ -165,9 +169,84 @@
 
 }
 
+#highlight-center {
+  p {
+    position: relative;
+    overflow: hidden;
+  }
+
+  i {
+    font-weight: 400;
+    font-family: @font-paragraph;
+    font-size: min(4vw, 30px);
+    font-style: normal;
+  }
+
+  p:first-child {
+    font-size: min(8vw, 72px);
+    font-family: @font-headline;
+    color: @color-ft-primary;
+    font-weight: 800;
+  }
+
+  p:last-child {
+    font-size: min(4vw, 27px);
+    font-family: @font-paragraph;
+    color: @color-ft-secondary;
+    font-weight: 300;
+  }
+
+  p span {
+    display: block;
+    animation: slideIn 1s backwards;
+    animation-delay: 400ms;
+  }
+
+  p:nth-child(1) span {
+    animation-delay: 400ms;
+  }
+
+  p:nth-child(2) span {
+    animation-delay: 600ms;
+  }
+
+  p:nth-child(3) span {
+    animation-delay: 800ms;
+  }
+
+  p:nth-child(4) span {
+    animation-delay: 1s;
+  }
 
 
 
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+@media @mobile {
+  #highlight-center {
+
+    p:first-child {
+      font-size: 9vw;
+
+    }
+
+    p:last-child {
+      font-size: 4vw;
+
+    }
+  }
+}
 
 
 #highlight-container>div {
@@ -176,7 +255,7 @@
 
 }
 
-#highlight-container>div>* {
+#highlight-container>div:not(#highlight-center)>* {
   display: block;
   width: @highlight-vw;
 }
