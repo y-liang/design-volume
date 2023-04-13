@@ -8,7 +8,7 @@
 }
 
 .parallax>use {
-  animation: move-forever 12s linear infinite;
+  animation: horizontal-move 12s linear infinite;
 
   &:nth-child(1) {
     animation-delay: -3s;
@@ -35,7 +35,7 @@
   opacity: 1;
 }
 
-@keyframes move-forever {
+@keyframes horizontal-move {
   0% {
     transform: translate(-90px, 0%);
   }
